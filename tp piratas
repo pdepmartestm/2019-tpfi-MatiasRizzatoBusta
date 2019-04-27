@@ -1,0 +1,31 @@
+ jackSparrow = ("jackSparrow" ,[ ("brujulaApuntaDeseos",10000),("frascoDeArena",0)])
+ davidJones =("davidJones" ,[("frasco",1)])
+ anneBonny = ( "anneBonny" ,[("frascoDeArena",1),("doblones",100)])
+
+ cantTesorosDelPirata pirata = length (snd pirata)
+
+valorTotalBotin pirata = sum (map snd (snd pirata)) 
+
+esAfortunado pirata = valorTotalBotin > 10000
+
+ valorDeTesoroMasValioso pirata = maximum (map snd (snd pirata)) 
+ 
+ valorDeTesoroMasValioso pirata = maximum (map snd (snd pirata)) 
+ 
+ tesoroNoValioso pirata = filter (<100) ( snd (snd pirata))
+ -------------------------------------------------TESORO DE DSITINTO VALOR----------------------------------------------------------------------
+igualTesoroDistintoValor pirata pirata2 = any ( lotiene pirata2) (tesoro pirata)
+lotiene pirata tesoro = any ( idemNombrenoValor tesoro) (tesoro pirata)
+idemNombreNoValor (tesoro , tesoro2) (nombre,nombre2) = nombre == nombre2
+------------------------------------------------SAQUEOS----------------------------------------------------------------------------------------------
+ saquearValioso tesoro pirata | snd tesoro >=100 = (snd pirata) ++ tesoro
+
+ saquearEspecifico palabraClave tesoro pirata  | plabraClave == (fst tesoro) = pirata ++ tesoro
+
+ saquearConMoral tesoro pirata  = pirata
+
+ saqueoComplejo palabraClave tesoro pirata  |(snd tesoro) >=100 = saquearValioso tesoro pirata
+ | plabraClave == (fst tesoro) = saquearEspecifico tesoro pirata palabraClave
+ | otherwise = pirata 
+
+   saquear formaDeSaqueo pirata tesoro = pirata 
